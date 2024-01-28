@@ -1,7 +1,5 @@
 def queue_time(customers, n):
-    threads = {}
-    for i in range(n):
-        threads[i+1] = 0
+    threads = {i + 1: 0 for i in range(n)}    #make dictionari with counts in dhreads
     for customer in customers:
         min = 1
         for number, count in threads.items():

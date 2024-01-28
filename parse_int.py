@@ -13,17 +13,15 @@ def parse_int(string):
                'thirty': 30, 'forty': 40, 'fifty': 50, 'sixty': 60, 'seventy': 70, 'eighty': 80, 'ninety': 90}
     if string in numbers:
         return numbers[string]
-
-    elif not ' ' in string:
+    elif not ' ' in string: #for number from 20 to 99
         if '-' in string:
             tens = (string.split('-'))
         return  numbers[tens[0]] + numbers[tens[1]]
-    elif ' ' in string:
+    elif ' ' in string: #for complex numbers
         lst_string = string.split()
-        temp_n = 0
+        temp_n = 0  #temborary variable
         for numb in lst_string:
             # print(numb)
-
             if numb in numbers:
                 temp_n += numbers[numb]
             elif numb == 'hundred':
@@ -44,8 +42,6 @@ def parse_int(string):
         return number
     else:
         pass
-
-
     return number
 
 
